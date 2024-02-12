@@ -1,0 +1,17 @@
+def flatten_list(lst):
+    flattened = []
+    for item in lst:
+        if isinstance(item, list):
+            flattened.extend(flatten_list(item))
+        else:
+            flattened.append(item)
+    return flattened
+
+# Take user input for the nested list
+user_input = input("Enter a nested list: ")
+nested_list = eval(user_input)
+
+# Flatten the nested list
+flattened_list = flatten_list(nested_list)
+print(flattened_list)
+#[1, 2, 3, 4, [2, 3, 4, [33, 22, 11], 10, 12, 14], 5, 6, 7] inpput
